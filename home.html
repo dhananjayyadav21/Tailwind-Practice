@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" id="root" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/output.css">
+</head>
+
+<body>
+    <header class="container m-auto">
+        <nav class="w-full p-4 bg-gray-950 text-white cursor-pointer flex justify-between items-center">
+            <h6 class="transition hover:text-amber-200">Home</h6>
+            <button id="select-mode"
+                class=" border-2 border-gray-400 p-2 rounded-md cursor-pointer dark:bg-amber-100 dark:text-black"
+                onclick="handleMode(event)">
+                Light Mode</button>
+        </nav>
+    </header>
+
+    <main class="h-screen light">
+        <section class="bg-amber-50 dark:bg-black dark:text-white w-full h-full flex justify-center items-center">
+            <div
+                class="bg-amber-100 dark:bg-gray-900 dark:text-white  w-120 p-12 text-black text-center rounded-lg flex flex-col gap-3 shadow-md shadow-amber-200">
+                <button
+                    class="bg-gradient-to-t to-gray-100 from-gray-200 dark:to-gray-700 dark:from-gray-900 cursor-pointer transition duration-1000 hover:bg-gradient-to-l to-gray-100 from-gray-200 dark:to-gray-700 dark:from-gray-900 ease-in-out delay-100  hover:text-gray-900 dark:hover:text-gray-200 text-2xl border-1 border-gray-700 rounded-sm p-2">Here
+                    we are create some tool</button>
+                <ul class="[&>*]:text-md text-gray-800 dark:text-gray-300 flex flex-col gap-2">
+                    <li>Zorigp</li>
+                    <li>Popolate</li>
+                    <li>Serias</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script>
+        function handleMode(event) {
+            root = document.getElementById('root');
+            const btn = event.target;
+
+            if (root.className == "light") {
+                btn.innerHTML = "Enable Light Mode";
+            } else {
+                btn.innerHTML = "Enable Dark Mode";
+            }
+            root.classList.toggle('light');
+            root.classList.toggle('dark');
+        }
+    </script>
+
+</body>
+
+</html>
